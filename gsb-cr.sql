@@ -39,6 +39,14 @@ CREATE TABLE `collaborateur` (
   `collStatut` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `medicament`
+--
+
+INSERT INTO `collaborateur` VALUES
+("SOSOREN","LES","Soren","TETE","32600","Blanes","2025-08-17","visiteur","NikeTa"),
+("TEST45","SALARD","Rémi","1044 Chemin En Tarride", "32130","Seysses-Savès","2005-08-16","visiteur","Azerty");
+
 -- --------------------------------------------------------
 
 --
