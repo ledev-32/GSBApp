@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+}
+
+header {
+    background-color: #c51c1c;
+    color: #fff;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+header h1 {
+    margin: 0;
+    padding: 10;
+}
+
+header .menu {
+    float: right;
+}
+
+header .menu a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+.rapport {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.rapport h2 {
+    margin-top: 0;
+}

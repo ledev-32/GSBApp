@@ -1,0 +1,2 @@
+SELECT collMdp,collStatut FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
