@@ -17,7 +17,7 @@ $userMdp = $_POST["userMotDePasse"];
 $rSQL = "SELECT collMdp,collStatut FROM collaborateur WHERE collMatricule = '$userName'";
 
 // Envoi de la requête au SGBD
-$resultSQL = $connexion->query($rSQL) or die("NIQUE TA MERE TETE DE NEUILLLLLEEEEEE");
+$resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
 
 // Détermination du nombre de ligne
 $ligne = $resultSQL->fetch();

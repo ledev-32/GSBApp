@@ -20,10 +20,10 @@ session_start();
             header("Location:pages/visiteur/index.html"); //Disponible
         }
         else if ($_SESSION["userStatus"] == "délégué") {
-            header("Location:pages/visiteur/index.html"); //Indisponible
+            header("Location:pages/delegue/index.html"); //Indisponible
         }
         else if ($_SESSION["userStatus"] == "responsable") {
-            header("Location:pages/visiteur/index.html"); //Indisponible
+            header("Location:pages/responsable/index.html"); //Indisponible
         }
     } 
     else

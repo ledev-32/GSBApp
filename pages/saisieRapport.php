@@ -2,7 +2,7 @@
                 require("connexionBase.php");
 
                 $rSQL = "SELECT id FROM rapportvisite";
-                $resultSQL = $connexion->query($rSQL) or die("NIQUE TA MERE TETE DE NEUILLLLLEEEEEE ta requête ne passe pas");
+                $resultSQL = $connexion->query($rSQL) or die("Votre requête ne passe pas");
                 $ligne = $resultSQL->fetch();
                 $_SESSION["idRapport"] = end($ligne);
             ?>
@@ -42,7 +42,7 @@
                     require("connexionBase.php");
 
                     $rSQL = "SELECT praNum,praNom,praPrenom FROM praticien";
-                    $resultSQL = $connexion->query($rSQL) or die("NIQUE TA MERE TETE DE NEUILLLLLEEEEEE ta requête ne passe pas");
+                    $resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
                     $ligne = $resultSQL->fetch();
                     echo "<select name='praticien' size='1'>";
                     while ($ligne!=false) {
@@ -53,9 +53,69 @@
                     echo "</select>";
                 ?>
                 <br/>
-                Bilan : <input type="textarea
-
+                Bilan : 
+                <textarea id="story" name="story" rows="5" cols="33">Bilan de la séance
+                </textarea>
                 <br/>
+                Coefficient de Confiance : 
+                <select name="coeffConfiance" size="1">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <br/>
+                Motif : 
+                <select name="" size=1>
+                    <option value="X">A</option>
+                    <option value="X">B</option>
+                    <option value="X">C</option>
+                    <option value="X">D</option>
+                </select>
+                <br/>
+                Médicaments Présentés (obligatoirement 2) :
+                <br/> 
+                <?php //Script récupérant la liste des médicaments
+                    require("connexionBase.php");
+
+                    $rSQL = "SELECT medNomcommercial FROM medicament";
+                    $resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
+                    $ligne = $resultSQL->fetch();
+                    echo "<select name='praticien' size='4'>";
+                    while ($ligne!=false) {
+
+                        echo "<option value='".$ligne[0]."'>".$ligne[0]."</option>";
+                        $ligne = $resultSQL->fetch();
+                    }
+                    echo "</select>";
+                ?>
+                <br/>
+                Echantillons (maximum 2) : 
+                <br/>
+                <?php //Script récupérant la liste des médicaments
+                    require("connexionBase.php");
+
+                    $rSQL = "SELECT medNomcommercial FROM medicament";
+                    $resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
+                    $ligne = $resultSQL->fetch();
+                    echo "<select name='praticien' size='4'>";
+                    while ($ligne!=false) {
+
+                        echo "<option value='".$ligne[0]."'>".$ligne[0]."</option>";
+                        $ligne = $resultSQL->fetch();
+                    }
+                    echo "</select>";
+                ?>
+                
+                <br/>
+                <input type="reset" value="Annuler">
                 <input type="submit" value="Se connecter">
             </form>
         </section>
