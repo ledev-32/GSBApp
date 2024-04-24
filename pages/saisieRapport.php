@@ -54,7 +54,7 @@
                 ?>
                 <br/>
                 Bilan : 
-                <textarea id="story" name="story" rows="5" cols="33">Bilan de la séance
+                <textarea id="bilan" name="bilan" rows="5" cols="33">Bilan de la séance
                 </textarea>
                 <br/>
                 Coefficient de Confiance : 
@@ -73,11 +73,11 @@
                 </select>
                 <br/>
                 Motif : 
-                <select name="" size=1>
-                    <option value="X">A</option>
-                    <option value="X">B</option>
-                    <option value="X">C</option>
-                    <option value="X">D</option>
+                <select name="motif" size=1>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
                 </select>
                 <br/>
                 Médicaments Présentés (obligatoirement 2) :
@@ -88,7 +88,7 @@
                     $rSQL = "SELECT medNomcommercial FROM medicament";
                     $resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
                     $ligne = $resultSQL->fetch();
-                    echo "<select name='praticien' size='4'>";
+                    echo "<select name='medicaments' size='4'>";
                     while ($ligne!=false) {
 
                         echo "<option value='".$ligne[0]."'>".$ligne[0]."</option>";
@@ -105,7 +105,7 @@
                     $rSQL = "SELECT medNomcommercial FROM medicament";
                     $resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
                     $ligne = $resultSQL->fetch();
-                    echo "<select name='praticien' size='4'>";
+                    echo "<select name='echantillons' size='4'>";
                     while ($ligne!=false) {
 
                         echo "<option value='".$ligne[0]."'>".$ligne[0]."</option>";

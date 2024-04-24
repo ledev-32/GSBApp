@@ -36,7 +36,8 @@ CREATE TABLE `collaborateur` (
   `collCp` varchar(5) DEFAULT NULL,
   `collVille` varchar(30) DEFAULT NULL,
   `collDateembauche` datetime DEFAULT NULL,
-  `collStatut` varchar(255) DEFAULT NULL
+  `collStatut` varchar(255) DEFAULT NULL,
+  `collMdp` varchar(16) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -44,8 +45,8 @@ CREATE TABLE `collaborateur` (
 --
 
 INSERT INTO `collaborateur` VALUES
-("SOSOREN","LES","Soren","TETE","32600","Blanes","2025-08-17","visiteur","NikeTa"),
-("TEST45","SALARD","Rémi","1044 Chemin En Tarride", "32130","Seysses-Savès","2005-08-16","visiteur","Azerty");
+("SOSOREN","LES","Soren","TETE","32600","Blanes","2025-08-17","visiteur",""),
+("TEST45","SALARD","Rémi","1044 Chemin En Tarride", "32130","Seysses-Savès","2005-08-16","visiteur","");
 
 -- --------------------------------------------------------
 
