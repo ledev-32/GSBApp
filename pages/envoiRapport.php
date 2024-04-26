@@ -1,16 +1,14 @@
 <?php 
-    session_save_path("../../sessions")
+    session_save_path("../../sessions");
     session_start();
 ?>
 
 <?php
     // ---Déclaration des variables qui récupèrent les données du formulaire de saisie des rapports
     $idRapport = $_SESSION["idRapport"] + 1;
-    echo "Le rapport dernier était le".$_SESSION["idRapport"]." ème rapport et vous avez saisi le".$idRapport." èmme rapport";
     $collMatricule = "SOSOREN";
     $dateRapport = $_POST["date"];
     $numPraticien = intval($_POST["praticien"]);
-    echo $numPraticien;
     $bilanVisite = $_POST["bilan"];
     $coeff = $_POST["coeffConfiance"];
     $motifVisite = $_POST["motif"];
@@ -30,10 +28,6 @@
     //-----------------------------------------
 
     if (!isset($_POST["echantillons"])) {
-
-        echo "<br/>LES ECHANTILLONS NE SONT PAS RENSEIGNES";
-        echo "<br/>".$medicament1;
-        echo "<br/>".$medicament2;
         $rSQL = "INSERT INTO rapportvisite(id,collMatricule,praNum,rapDate,rapBilan,rapMotif,coefConf,medicamentPres1,medicamentPres2)VALUES($idRapport,\"$collMatricule\",$numPraticien,\"$dateRapport\",\"$bilanVisite\",\"$motifVisite\",\"$coeff\",\"$medicament1\",\"$medicament2\")";
     }
     else {
@@ -62,4 +56,5 @@
     
     
     echo "Votre rapport à bien été saisie, merci de votre confiance en notre logiciel";
+    echo "<br/><a href='../index.php'>Retour vers l'accueil</a>";
 ?>

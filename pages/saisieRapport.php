@@ -1,10 +1,15 @@
+<?php 
+    session_save_path("../../sessions");
+    session_start();
+?>
+
 <?php // ---Script de récupération de l'id du rapport
                 require("connexionBase.php");
 
-                $rSQL = "SELECT id FROM rapportvisite";
+                $rSQL = "SELECT MAX(id) FROM rapportvisite";
                 $resultSQL = $connexion->query($rSQL) or die("Votre requête ne passe pas");
                 $ligne = $resultSQL->fetch();
-                $_SESSION["idRapport"] = end($ligne);
+                $_SESSION["idRapport"] = $ligne[0];
                 echo $_SESSION["idRapport"];
             ?>
 
@@ -95,6 +100,8 @@
                         $ligne = $resultSQL->fetch();
                     }
                     echo "</select>";
+
+
                 ?>
                 <br/>
                 <div id="caseEchant"> 
