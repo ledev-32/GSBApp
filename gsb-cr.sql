@@ -98,6 +98,9 @@ INSERT INTO `medicament` (`medDepotlegal`, `medNomcommercial`, `famCode`, `medCo
 ('TXISOL22', 'TOUXISOL Vitamine C', 'ALO', 'Tyrothricine + Acide ascorbique (Vitamine C)', 'Ce médicament est utilisé pour traiter les affections de la bouche et de la gorge.', 'Ce médicament est contre-indiqué en cas d\'allergie à  l\'un des constituants et chez l\'enfant de moins de 6 ans.', NULL),
 ('URIEG6', 'URIREGUL', 'AUM', 'Fosfomycine trométamol', 'Ce médicament est utilisé pour traiter les infections urinaires simples chez la femme de moins de 65 ans.', 'La prise de ce médicament est contre-indiquée en cas d\'allergie à  l\'un des constituants et d\'insuffisance rénale.', NULL);
 
+
+INSERT INTO praticien VALUES(1,"EKIPE","Raymond","10 rue du palmier","31530","Lasserre",0.52,"NET");
+
 -- --------------------------------------------------------
 
 --
@@ -124,7 +127,6 @@ CREATE TABLE `praticien` (
 CREATE TABLE `rapportvisite` (
   `id` int(11) NOT NULL,
   `collMatricule` varchar(10) NOT NULL,
-  `rapNum` int(11) NOT NULL,
   `praNum` int(11) NOT NULL,
   `rapDate` datetime DEFAULT NULL,
   `rapBilan` varchar(255) DEFAULT NULL,
@@ -135,6 +137,8 @@ CREATE TABLE `rapportvisite` (
   `echantillonPres1` varchar(10) DEFAULT NULL,
   `echantillonPres2` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO rapportvisite(collMatricule,praNum,rapDate,rapBilan,rapMotif,coefConf) VALUES("TEST45",2,1,"2024-03-08","Visite correcte rien à dire (test)","systématique","8");
 
 --
 -- Index pour les tables déchargées

@@ -3,7 +3,7 @@
 	$hote="localhost"; //
 	$login="root";
 	$mdp="";
-	$nombd="gsb-v1"; 
+	$nombd="gsv-v2"; 
 
 	// Connection au serveur
 	try { 

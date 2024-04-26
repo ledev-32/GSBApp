@@ -5,6 +5,7 @@
                 $resultSQL = $connexion->query($rSQL) or die("Votre requête ne passe pas");
                 $ligne = $resultSQL->fetch();
                 $_SESSION["idRapport"] = end($ligne);
+                echo $_SESSION["idRapport"];
             ?>
 
 <!DOCTYPE html>
@@ -33,14 +34,13 @@
             <form action="envoiRapport.php" method="post" name="saisieRapport">
                 <?php 
                     $numRapport = $_SESSION["idRapport"] + 1;
-                    echo "Vous êtes au rapport numéro ".$numRapport;
+                    echo "<h1>Vous êtes au rapport numéro ".$numRapport."</h1>";
                 ?>
                 <br/>
                 Date du rapport : <input type="date" name="date" id="date" size="20"> <br/>
                 Praticien : 
                 <?php //Script récupérant la liste des praticiens
                     require("connexionBase.php");
-
                     $rSQL = "SELECT praNum,praNom,praPrenom FROM praticien";
                     $resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
                     $ligne = $resultSQL->fetch();
@@ -85,34 +85,36 @@
                 <?php //Script récupérant la liste des médicaments
                     require("connexionBase.php");
 
-                    $rSQL = "SELECT medNomcommercial FROM medicament";
+                    $rSQL = "SELECT medDepotlegal,medNomcommercial FROM medicament";
                     $resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
                     $ligne = $resultSQL->fetch();
-                    echo "<select name='medicaments' size='4'>";
+                    echo "<select name='medicaments[]' size='4' multiple>";
                     while ($ligne!=false) {
 
-                        echo "<option value='".$ligne[0]."'>".$ligne[0]."</option>";
+                        echo "<option value='".$ligne[0]."'>".$ligne[1]."</option>";
                         $ligne = $resultSQL->fetch();
                     }
                     echo "</select>";
                 ?>
                 <br/>
-                Echantillons (maximum 2) : 
-                <br/>
-                <?php //Script récupérant la liste des médicaments
-                    require("connexionBase.php");
+                <div id="caseEchant"> 
+                    Echantillons (maximum 2) : 
+                    <br/>
+                    <?php //Script récupérant la liste des médicaments
+                        require("connexionBase.php");
 
-                    $rSQL = "SELECT medNomcommercial FROM medicament";
-                    $resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
-                    $ligne = $resultSQL->fetch();
-                    echo "<select name='echantillons' size='4'>";
-                    while ($ligne!=false) {
-
-                        echo "<option value='".$ligne[0]."'>".$ligne[0]."</option>";
+                        $rSQL = "SELECT medDepotlegal,medNomcommercial FROM medicament";
+                        $resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
                         $ligne = $resultSQL->fetch();
-                    }
-                    echo "</select>";
+                        echo "<select name='echantillons[]' size='4' multiple>";
+                        while ($ligne!=false) {
+                            echo "<option value='".$ligne[0]."'>".$ligne[1]."</option>";
+                            $ligne = $resultSQL->fetch();
+                        }
+                        echo "</select>";
                 ?>
+                </div>
+                
                 
                 <br/>
                 <input type="reset" value="Annuler">
