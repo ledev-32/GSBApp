@@ -45,8 +45,7 @@ CREATE TABLE `collaborateur` (
 --
 
 INSERT INTO `collaborateur` VALUES
-("SOSOREN","LES","Soren","TETE","32600","Blanes","2025-08-17","visiteur",""),
-("TEST45","SALARD","Rémi","1044 Chemin En Tarride", "32130","Seysses-Savès","2005-08-16","visiteur","");
+("SOSOREN","LES","Soren","TETE","32600","Blanes","2025-08-17","visiteur","");
 
 -- --------------------------------------------------------
 
