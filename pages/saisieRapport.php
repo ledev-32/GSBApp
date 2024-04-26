@@ -3,6 +3,13 @@
     session_start();
 ?>
 
+<?php 
+    //On vérifie si l'utilisateur est authorisé à y rentrer
+    if ($_SESSION["userStatus"] != "visiteur") {
+        header("Location:../index.php");
+    }
+?>
+
 <?php // ---Script de récupération de l'id du rapport
                 require("connexionBase.php");
 

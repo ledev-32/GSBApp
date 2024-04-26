@@ -1,3 +1,15 @@
+<?php 
+    session_save_path("../../../sessions");
+    session_start();
+?>
+
+<?php 
+    //On vérifie si l'utilisateur est authorisé à y rentrer
+    if ($_SESSION["userStatus"] != "visiteur") {
+        header("Location:../../index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

@@ -17,7 +17,7 @@ session_start();
     // Sinon redirection vers la page HTML de login
     if (isset($_SESSION["userName"])) {
         if ($_SESSION["userStatus"] == "visiteur") {
-            header("Location:pages/visiteur/index.html"); //Disponible
+            header("Location:pages/visiteur/index.php"); //Disponible
         }
         else if ($_SESSION["userStatus"] == "délégué") {
             header("Location:pages/delegue/index.html"); //Indisponible

@@ -14,7 +14,7 @@ $userMdp = $_POST["userMotDePasse"];
 //      $userName = null;
 
 // Ecriture de la requête Identifiant
-$rSQL = "SELECT collMdp,collStatut FROM collaborateur WHERE collMatricule = '$userName'";
+$rSQL = "SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = '$userName'";
 
 // Envoi de la requête au SGBD
 $resultSQL = $connexion->query($rSQL) or die("Votre requête n'est pas passée");
@@ -25,6 +25,7 @@ $ligne = $resultSQL->fetch();
 // Récupération du mot de passe
 $bddMdp = $ligne[0];
 $bddStatus = $ligne[1];
+$bddMatricule = $ligne[2];
 
 echo $bddStatus;
 
@@ -33,6 +34,7 @@ echo $bddStatus;
 if ($userMdp == $bddMdp) {
     $_SESSION["userName"] = $userName;
     $_SESSION["userStatus"] = $bddStatus;
+    $_SESSION["userMatricule"] = $bddMatricule;
     $info = $rSQL."\n".$ligne."\n";
     file_put_contents('riendimportant.log',$info,FILE_APPEND);
     header("Location:../index.php");

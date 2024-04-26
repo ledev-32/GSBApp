@@ -3,6 +3,14 @@
     session_start();
 ?>
 
+
+<?php 
+    //On vérifie si l'utilisateur est authorisé à y rentrer
+    if ($_SESSION["userStatus"] != "visiteur") {
+        header("Location:../index.php");
+    }
+?>
+
 <?php
     // ---Déclaration des variables qui récupèrent les données du formulaire de saisie des rapports
     $idRapport = $_SESSION["idRapport"] + 1;
