@@ -22,7 +22,7 @@
     <header>
         <h1>MaKo</h1>
         <div class="menu">
-            <a href="#">Consultations des rapports</a>
+            <a href="../consultationRapport.php">Consultations des rapports</a>
             <a href="../saisieRapport.php">Rapport de visites</a>
             <a href="#">Déconnexion</a>
         </div>

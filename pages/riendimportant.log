@@ -22,3 +22,11 @@ SELECT collMdp,collStatut FROM collaborateur WHERE collMatricule = 'TEST45'
 Array
 SELECT collMdp,collStatut FROM collaborateur WHERE collMatricule = 'TEST45'
 Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
