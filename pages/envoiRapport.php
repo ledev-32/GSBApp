@@ -14,7 +14,7 @@
 <?php
     // ---Déclaration des variables qui récupèrent les données du formulaire de saisie des rapports
     $idRapport = $_SESSION["idRapport"] + 1;
-    $collMatricule = "SOSOREN";
+    $collMatricule = $_SESSION["userMatricule"];
     $dateRapport = $_POST["date"];
     $numPraticien = intval($_POST["praticien"]);
     $bilanVisite = $_POST["bilan"];
@@ -28,12 +28,6 @@
 
 
     require("connexionBase.php");
-
-    // ----------------- TEST -----------------
-    //require("connexionBase.php");
-    //$rSQL = "INSERT INTO rapportvisit(id,collMatricule,praNum,rapDate,rapBilan,rapMotif,coefConf) VALUES(32,'TEST45',1,'2024-03-08','Visite correcte rien à dire (test)','systématique','8')";
-    //$envoiSQL = $connexion->exec($rSQL) or die($rSQL.print_r($connexion->errorInfo(), true));
-    //-----------------------------------------
 
     if (!isset($_POST["echantillons"])) {
         $rSQL = "INSERT INTO rapportvisite(id,collMatricule,praNum,rapDate,rapBilan,rapMotif,coefConf,medicamentPres1,medicamentPres2)VALUES($idRapport,\"$collMatricule\",$numPraticien,\"$dateRapport\",\"$bilanVisite\",\"$motifVisite\",\"$coeff\",\"$medicament1\",\"$medicament2\")";

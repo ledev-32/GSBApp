@@ -32,7 +32,6 @@ echo $bddStatus;
 
 // ---Vérification des identifiants
 if ($userMdp == $bddMdp) {
-    $_SESSION["userName"] = $userName;
     $_SESSION["userStatus"] = $bddStatus;
     $_SESSION["userMatricule"] = $bddMatricule;
     $info = $rSQL."\n".$ligne."\n";

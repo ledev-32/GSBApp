@@ -15,7 +15,7 @@ session_start();
     // Vérification de la session
     // Si la session est active alors redirection vers la page d'accueil
     // Sinon redirection vers la page HTML de login
-    if (isset($_SESSION["userName"])) {
+    if (isset($_SESSION["userMatricule"])) {
         if ($_SESSION["userStatus"] == "visiteur") {
             header("Location:pages/visiteur/index.php"); //Disponible
         }

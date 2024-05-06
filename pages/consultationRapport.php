@@ -23,7 +23,9 @@
         <h1>MaKo - Consultation des Rapports</h1>
         <div class="menu">
             <a href="#">Consultations des rapports</a>
-            <a href="saisieRapport.php">Rapport de visites</a>
+            <a href="saisieRapport.php">Saisie des rapports</a>
+            <a href="modificationRapport.php">Modification des rapports</a>
+            <a href="../index.php">Accueil</a>
             <a href="#">Déconnexion</a>
         </div>
     </header>
@@ -31,7 +33,7 @@
         <section id="consultation">
             <?php 
                 require("connexionBase.php");
-                $rSQL = "SELECT rapportvisite.id,praticien.praNom,praticien.praPrenom,rapDate,rapBilan,rapMotif,coefConf,medicamentPres1,medicamentPres2,echantillonPres1,echantillonPres2 FROM rapportvisite,praticien WHERE rapportvisite.praNum = praticien.praNum AND collMatricule = 'SOSOREN'";
+                $rSQL = "SELECT rapportvisite.id,praticien.praNom,praticien.praPrenom,rapDate,rapBilan,rapMotif,coefConf,medicamentPres1,medicamentPres2,echantillonPres1,echantillonPres2 FROM rapportvisite,praticien WHERE rapportvisite.praNum = praticien.praNum AND collMatricule = '".$_SESSION['userMatricule']."'";
                 $resultSQL = $connexion->query($rSQL) or die($rSQL.print_r($connexion->errorInfo(), true));
                 $ligne = $resultSQL->fetch();
                 echo "<table border='1'>";

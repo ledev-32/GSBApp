@@ -30,3 +30,33 @@ SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule =
 Array
 SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
 Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'TEST45'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'SOSOREN'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'SOSOREN'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'SOSOREN'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'SOSOREN'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'SOSOREN'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'SOSOREN'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'SOSOREN'
+Array
+SELECT collMdp,collStatut,collMatricule FROM collaborateur WHERE collMatricule = 'SOSOREN '
+Array
