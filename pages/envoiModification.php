@@ -1,18 +1,10 @@
-<?php // ---Démarrage de la session dans le dossier convenu
-    session_save_path("../../sessions"); //!!!!!! A REDEFINIR
-    session_start();
-?>
-
 <?php 
-    // ---Vérification d'authentification (par rapport au statut [visiteur,délégué,responsable])
-    if ($_SESSION["userStatus"] != "visiteur") {
-        header("Location:../index.php");
-    }
+    require("../includes/verifSecure.php")
 ?>
 
 <?php 
     // ---Récupération du PDO de connexion (permettant la connexion à la base de donnée)
-    require("connexionBase.php");
+    require("../includes/connexionBase.php");
 
     // ---Déclaration des variables qui récupèrent les données du formulaire saisieRapport.php
     $idRapport = $_SESSION["idRapportAModifier"];       // ---Id du rapport (qui est l'Id du rapport dernièrement enregistré auquel on ajoute 1 (stocké dans la session))

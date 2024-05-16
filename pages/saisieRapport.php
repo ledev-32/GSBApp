@@ -1,17 +1,10 @@
-<?php // ---Démarrage de la session dans le dossier convenué 
-    session_save_path("../../sessions"); //!!!!!! A REDEFINIR
-    session_start();
-?>
-
-<?php // ---Vérification d'authentification (par rapport au statut [visiteur,délégué,responsable])
-    if ($_SESSION["userStatus"] != "visiteur") {
-        header("Location:../index.php");
-    }
+<?php 
+    require("../includes/verifSecure.php")
 ?>
 
 <?php // ---Script de récupération de l'id du rapport
     // ---Récupération du PDO de connexion (permettant la connexion à la base de donnée)
-    require("connexionBase.php");
+    require("../includes/connexionBase.php");
 
     // ---Expression et envoi de la requête complète récupérant le dernier id de rapport saisi
     $rSQL = "SELECT MAX(id) FROM rapportvisite";

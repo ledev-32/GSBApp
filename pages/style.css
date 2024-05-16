@@ -1,41 +1,46 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: aqua;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Fond blanc */
 }
+
+
 
 header {
-    background-color: #c51c1c;
-    color: #fff;
-    padding: 10px;
-    margin-top: 5px;
+    display: flex;
 }
 
-header h1 {
-    margin: 0;
-    padding: 10;
-}
-
-header .menu {
-    float: right;
-}
-
-header .menu a {
-    color: #fff;
-    text-decoration: none;
+header button {
     margin-right: 10px;
 }
 
 main {
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Hauteur de la fenêtre moins la hauteur de l'en-tête */
 }
 
-.rapport {
-    border: 1px solid #ccc;
-    padding: 10px;
+/* Styles pour le formulaire */
+form {
+    width: 100%; 
+    max-width: fit-content; 
+    height: 500px; /* Définit la hauteur du formulaire à 500 pixels */
+    padding-right: 200px; /* Ajoute un rembourrage de 20px à l'intérieur du formulaire */
+    padding-left: 200px; /* Ajoute un rembourrage de 20px à l'intérieur du formulaire */
+    border: 2px solid #ccc; /* Définit une bordure de 2px solide avec une couleur grise */
+    border-radius: 10px; /* Arrondit les coins du formulaire avec un rayon de 10px */
+    background-color: #88cbe6; /* Définit la couleur de fond du formulaire sur une nuance de gris clair */
+    margin: auto;
+    display: flex; /* Utilise un modèle de boîte flexible pour les enfants du formulaire */
+    flex-direction: column; /* Aligne les enfants du formulaire en colonne */
+    justify-content: center;
 }
 
-.rapport h2 {
-    margin-top: 0;
+#logo {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
 }

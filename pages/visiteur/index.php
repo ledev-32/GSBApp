@@ -1,5 +1,5 @@
 <?php // ---Démarrage de la session dans le dossier convenu
-    session_save_path("../../../sessions"); //!!!!!! A REDEFINIR
+    session_save_path("../../sessions"); //!!!!!! A REDEFINIR
     session_start();
 ?>
 
@@ -29,7 +29,7 @@
     <main>
         <section>
             <h1>Bienvenue sur votre application GSB</h1>
-            <p>Vous êtes identifiés en tant que <?php echo $_SESSION["userStatus"];?></p>
+            <p>Vous êtes identifiés en tant que <?php echo $_SESSION["userStatus"];?> avec le pseudo <?php echo $_SESSION["userMatricule"];?> </p>
             <p>Vous pouvez saisir dees rapports de visite, mais aussi consulter et modifier uniquement les rapports que vous avez remplis</p>
         </section>
     </main>

@@ -1,11 +1,10 @@
-<?php // ---Démarrage de la session dans le dossier convenu
-    session_save_path("../../sessions"); //!!!!!! A REDEFINIR
-    session_start();
+<?php 
+    require("../includes/verifSecure.php");
 ?>
 
 <?php 
     // ---Récupération du PDO de connexion (permettant la connexion à la base de donnée)
-    require("connexionBase.php");
+    require("../includes/connexionBase.php");
 
     // ---Récupération du nom d'utilisateur et du mot de passe saisi dans authent.html
     $userName = $_POST["username"];
@@ -23,17 +22,24 @@
     $bddMdp = $ligne[0];        // ---Mot de passe du collaborateur
     $bddStatus = $ligne[1];     // ---Statut du collaborateur
     $bddMatricule = $ligne[2];  // ---Matricule du collaborateur
+    echo $bddMdp."<br/>";
+    echo $bddStatus."<br/>";
+    echo $bddMatricule."<br/>";
+    echo "<br/>";
+    echo $userMdp."<br/>";
+    echo $userName;
 
     // ---Vérification des identifiants
     if ($userMdp == $bddMdp) {                      // ---Si le mot de passe du formulaire est le même que celui de la base de donnée :
                                                     // ---Alors on stocke le statut et le matricule de l'utilisateur dans la session
         $_SESSION["userStatus"] = $bddStatus;       
         $_SESSION["userMatricule"] = $bddMatricule;
+        echo $_SESSION["userStatus"];
         header("Location:../index.php");            // ---Puis on redirige vers la page index.php principale
     }
     else {                                          // ---Sinon
                                                     // ---On redirige vers le formulaire authent.html
         header("Location:authent.html");
-    }
+        }
     session_write_close(); // ---Fermmeture de la session
 ?>

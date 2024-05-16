@@ -1,39 +1,82 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+
+.logo {
+    display: block; /* Assure que l'image est un élément de bloc */
+    margin: 0 auto; /* Centre l'image horizontalement */
+    width: 150px;
+    height: 150px;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-right: 20px;
 }
 
-header h1 {
-    margin: 0;
-    padding: 0;
+.left-section label,
+.left-section input,
+.left-section select,
+.left-section textarea {
+    margin-bottom: 15px; /* Ajoute un espacement de 15px en bas de chaque élément */
 }
 
-header .menu {
-    float: right;
+.right-section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 20px; /* Réinitialiser la valeur à 20px */
 }
 
-header .menu a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 10px;
+.right-section label,
+.right-section input,
+.right-section select,
+.right-section textarea {
+    margin-bottom: 15px; /* Ajoute un espacement de 15px en bas de chaque élément */
 }
 
-main {
-    padding: 20px;
+
+
+.Valider {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right:500px;
 }
 
-.rapport {
-    border: 1px solid #ccc;
-    padding: 10px;
+.Annuler {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start; /* Changer la justification à flex-start */
+    padding-left: 20px; /* Réinitialiser la valeur à 20px */
 }
 
-.rapport h2 {
-    margin-top: 0;
+
+
+/* Styles spécifiques au carré */
+.square {
+    width: 90%;
+    max-width: 1000px; /* Largeur maximale du carré */
+    height: 90vh; /* Hauteur du carré */
+    background-color: #e0e0e0; /* Couleur de fond du carré */
+}
+
+.memeniveau {
+    display: flex; /* Utilise un modèle de boîte flexible pour aligner les sections horizontalement */
+}
+
+.left-section,
+.right-section {
+    flex: 1; /* Fait en sorte que les sections prennent autant d'espace que possible */
+    padding: 0 20px; /* Ajoute un peu d'espace entre les sections */
+}
+
+.memeniveau2 {
+    display: flex; /* Utilise un modèle de boîte flexible pour aligner les sections horizontalement */
+}
+
+.Valider,
+.Annuler {
+    flex: 1; /* Fait en sorte que les sections prennent autant d'espace que possible */
+    padding: 0 20px; /* Ajoute un peu d'espace entre les sections */
 }

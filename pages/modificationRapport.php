@@ -1,13 +1,5 @@
-<?php // ---Démarrage de la session dans le dossier convenu
-    session_save_path("../../sessions"); //!!!!!! A REDEFINIR
-    session_start();
-?>
-
 <?php 
-    // ---Vérification d'authentification (par rapport au statut [visiteur,délégué,responsable])
-    if ($_SESSION["userStatus"] != "visiteur") {
-        header("Location:../index.php");
-    }
+    require("../includes/verifSecure.php"); 
 ?>
 
 <?php 
@@ -18,7 +10,7 @@
     $_SESSION["idRapportAModifier"] = $idRapportSaisi;
 
     // ---Récupération du PDO de connexion (permettant la connexion à la base de donnée)
-    require("connexionBase.php");
+    require("../includes/connexionBase.php");
 
     // ---Récupération des valeurs du rapport à modifier ::::
     $rSQL = "SELECT collMatricule,praticien.praNom,praticien.praPrenom,rapDate,rapBilan,rapMotif,coefConf,medicamentPres1,medicamentPres2,echantillonPres1,echantillonPres2 FROM praticien,rapportvisite WHERE praticien.praNum = rapportvisite.praNum AND rapportvisite.id = ".$idRapportSaisi;

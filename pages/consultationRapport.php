@@ -1,6 +1,5 @@
-<?php // ---Démarrage de la session dans le dossier convenu
-    session_save_path("../../sessions"); //!!!!!! A REDEFINIR
-    session_start();
+<?php 
+    require("../includes/verifSecure.php")
 ?>
 
 <?php // ---Vérification d'authentification (par rapport au statut [visiteur,délégué,responsable])
@@ -32,7 +31,7 @@
         <section id="consultation">
             <?php 
                 // ---Récupération du PDO de connexion (permettant la connexion à la base de donnée)
-                require("connexionBase.php");
+                require("../includes/connexionBase.php");
 
                 // ---Expression et envoi de la requête complète récupérant toutes les informations d'un rapport donnée (par son Id)
                 $rSQL = "SELECT rapportvisite.id,praticien.praNom,praticien.praPrenom,rapDate,rapBilan,rapMotif,coefConf,medicamentPres1,medicamentPres2,echantillonPres1,echantillonPres2 FROM rapportvisite,praticien WHERE rapportvisite.praNum = praticien.praNum AND collMatricule = '".$_SESSION['userMatricule']."'";
