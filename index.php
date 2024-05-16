@@ -1,19 +1,15 @@
-<?php 
-// Nommage du répertoire de sessions
-session_save_path("../sessions"); //---CHEMIN A MODIFIER EN PASSAGE SITE
-
-// Démarrage de la session
+<?php // ---Démarrage de la session dans le dossier convenu
+session_save_path("../sessions"); //!!!!!! A REDEFINIR
 session_start();
 ?>
 
 
 
 <?php 
-    // Démarrage du script pour instancier une connexion avec la base de données
-    require("pages/connexionBase.php");
+    require("pages/connexionBase.php"); // ---Demande et exécute la page de connexion à la base de donnée
 
-    // Vérification de la session
-    // Si la session est active alors redirection vers la page d'accueil
+    // ---Vérification de la session
+    // Si la session (matricule) est active alors redirection vers la page d'accueil 
     // Sinon redirection vers la page HTML de login
     if (isset($_SESSION["userMatricule"])) {
         if ($_SESSION["userStatus"] == "visiteur") {
