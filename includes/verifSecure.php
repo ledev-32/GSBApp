@@ -1,5 +1,5 @@
 <?php // ---Démarrage de la session dans le dossier convenu
-    session_save_path("../sessions"); //!!!!!! A REDEFINIR
+    session_save_path("/var/www/GSB/sessions"); //!!!!!! A REDEFINIR
     session_start();
 ?>
 

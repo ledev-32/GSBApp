@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSB - Consultation</title>
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -22,8 +22,9 @@
         <div class="menu">
             <a href="#">Consultations des rapports</a>
             <a href="saisieRapport.php">Saisie des rapports de visite</a>
+            <a href="rechercheMedicament.php">Recherche de médicaments</a>
             <a href="../index.php">Accueil</a>
-            <a href="#">Déconnexion</a>
+            <a href="deconnexion.php">Déconnexion</a>
         </div>
         <p>Vous pouvez consulter vos rapports : </p>
     </header>

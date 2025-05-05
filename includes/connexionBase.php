@@ -1,9 +1,9 @@
 <?php
 	// ---Définition des variables pour le PDO
 	$hote="localhost"; // ---A remplacer par l'adresse IP du serveur
-	$login="root"; // ---A remplacer par le nom du compte
-	$mdp=""; // ---A remplacer par le mot de passe du compte utilisant la base de donnée
-	$nombd="gsv-v2"; // ---A remplacer par le nom de la base de donnée voulue
+	$login="admin"; // ---A remplacer par le nom du compte
+	$mdp="Azerty31"; // ---A remplacer par le mot de passe du compte utilisant la base de donnée
+	$nombd="gsb"; // ---A remplacer par le nom de la base de donnée voulue
 
 	// Connection au serveur
 	try { 

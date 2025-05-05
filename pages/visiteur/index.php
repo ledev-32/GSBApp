@@ -1,5 +1,5 @@
 <?php // ---Démarrage de la session dans le dossier convenu
-    session_save_path("../../sessions"); //!!!!!! A REDEFINIR
+    session_save_path("/var/www/GSB/sessions"); //!!!!!! A REDEFINIR
     session_start();
 ?>
 
@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSB - Visiteur - Accueil</title>
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
@@ -23,7 +23,8 @@
         <div class="menu">
             <a href="../consultationRapport.php">Consultations des rapports</a>
             <a href="../saisieRapport.php">Saisie des rapports de visite</a>
-            <a href="#">Déconnexion</a>
+            <a href="../rechercheMedicament.php">Recherche de médicaments</a>
+            <a href="../deconnexion.php">Déconnexion</a>
         </div>
     </header>
     <main>

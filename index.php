@@ -1,5 +1,5 @@
 <?php // ---Démarrage de la session dans le dossier convenu
-session_save_path("sessions"); //!!!!!! A REDEFINIR
+session_save_path("/var/www/GSB/sessions"); //!!!!!! A REDEFINIR
 session_start();
 ?>
 
@@ -9,6 +9,7 @@ session_start();
     // ---Vérification de la session
     // Si la session (matricule) est active alors redirection vers la page d'accueil 
     // Sinon redirection vers la page HTML de login+
+	var_dump($_SESSION);
     if (isset($_SESSION["userMatricule"])) {
         echo $_SESSION["userMatricule"];
         echo $_SESSION["userStatus"];

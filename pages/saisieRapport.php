@@ -23,17 +23,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSB - Saisie Rapport</title>
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="">
 </head>
 <body>
     <header>
         <h1>GSB - Saisie de rapport des visites 
         </h1>
         <div class="menu">
-            <a href="#">Consultations des rapports</a>
-            <a href="../saisieRapport.html">Saisie des rapports de visites</a>
-            <a href="#">Déconnexion</a>
-            <a href="../index.php">Accueil</a>
+            <a href="consultationRapport.php">Consultations des rapports</a>
+            <a href="">Saisie des rapports de visites</a>
+			<a href="rechercheMedicament.php">Recherche de médicaments</a>
+			<a href="../index.php">Accueil</a>
+            <a href="deconnexion.php">Déconnexion</a>
         </div>
     </header>
     <main>
